@@ -1,0 +1,48 @@
+<h2>三个项目方案对比</h2>
+<p class="subtitle">基于 Papers We Love 仓库的 AI 论文助手，我推荐方案 A</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)" style="border-color: #6366f1; background: rgba(99, 102, 241, 0.08);">
+    <div class="letter" style="background: #6366f1;">A</div>
+    <div class="content">
+      <h3>⭐ PaperLens — 智能论文探索平台 <span style="color:#6366f1;font-size:12px;">（推荐）</span></h3>
+      <p style="margin-bottom: 8px;">以"知识探索"为核心的 Web 应用，四大功能全覆盖</p>
+      <div style="font-size: 12px; color: #888;">
+        <strong>技术栈：</strong>Next.js + TypeScript + TailwindCSS + LangChain.js<br/>
+        <strong>核心亮点：</strong>交互式知识图谱 + AI 对话 + 阅读路径推荐<br/>
+        <strong>首期范围：</strong>标准版（摘要 + 问答 + 推荐 + 知识图谱 + 笔记）
+      </div>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>PaperCompanion — 极简阅读助手</h3>
+      <p style="margin-bottom: 8px;">轻量专注，PDF 阅读器 + AI 侧边栏，阅读体验优先</p>
+      <div style="font-size: 12px; color: #888;">
+        <strong>技术栈：</strong>Vue 3 + Vite + FastAPI (Python)<br/>
+        <strong>核心亮点：</strong>在线 PDF 阅读 + AI 摘要/问答同步<br/>
+        <strong>首期范围：</strong>精简版（论文浏览 + AI 摘要 + 侧边栏问答）
+      </div>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>PaperGraph — 知识图谱优先</h3>
+      <p style="margin-bottom: 8px;">以图谱可视化为主，探索论文关系网络</p>
+      <div style="font-size: 12px; color: #888;">
+        <strong>技术栈：</strong>React + D3.js + Neo4j + Python 后端<br/>
+        <strong>核心亮点：</strong>力导向图 + 主题聚类 + 引用分析 + 演进路线<br/>
+        <strong>首期范围：</strong>图谱探索 + 论文详情 + 简单摘要
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 24px; padding: 16px; background: #f8fafc; border-radius: 8px; font-size: 13px;">
+  <strong style="color: #6366f1;">💡 我的推荐：方案 A (PaperLens)</strong><br/>
+  理由：功能最完整（覆盖你想要的 ABCD）、Next.js 全栈开发效率高、知识图谱+AI 助手有差异化、可分阶段迭代、社区生态好。
+</div>

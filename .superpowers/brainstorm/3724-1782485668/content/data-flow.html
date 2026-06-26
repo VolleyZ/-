@@ -1,0 +1,98 @@
+<h2>数据流程 & 技术细节</h2>
+<p class="subtitle">AI 处理管线、数据模型、错误处理</p>
+
+<div class="section">
+  <h3>🔄 AI 处理管线</h3>
+  <div style="background: #f8fafc; border-radius: 8px; padding: 20px; font-size: 12px;">
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center;">
+      <div style="background: #dbeafe; padding: 10px 14px; border-radius: 6px; text-align: center;">
+        <div style="font-size: 18px;">📄</div>
+        <div style="font-weight: 600; color: #1e40af;">PDF 解析</div>
+        <div style="color: #64748b; font-size: 11px;">文本提取 + 分段</div>
+      </div>
+      <div style="color: #94a3b8; font-size: 18px;">→</div>
+      <div style="background: #dcfce7; padding: 10px 14px; border-radius: 6px; text-align: center;">
+        <div style="font-size: 18px;">🧩</div>
+        <div style="font-weight: 600; color: #15803d;">向量化存储</div>
+        <div style="color: #64748b; font-size: 11px;">Embedding + 向量库</div>
+      </div>
+      <div style="color: #94a3b8; font-size: 18px;">→</div>
+      <div style="background: #fef3c7; padding: 10px 14px; border-radius: 6px; text-align: center;">
+        <div style="font-size: 18px;">🤖</div>
+        <div style="font-weight: 600; color: #92400e;">AI 处理链</div>
+        <div style="color: #64748b; font-size: 11px;">摘要/问答/推荐</div>
+      </div>
+      <div style="color: #94a3b8; font-size: 18px;">→</div>
+      <div style="background: #fce7f3; padding: 10px 14px; border-radius: 6px; text-align: center;">
+        <div style="font-size: 18px;">💾</div>
+        <div style="font-weight: 600; color: #9d174d;">结果缓存</div>
+        <div style="color: #64748b; font-size: 11px;">避免重复计算</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🤖 多模型支持策略</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; font-size: 12px;">
+    <div style="padding: 14px; background: #f0f9ff; border-radius: 8px;">
+      <strong style="color: #0369a1;">☁️ OpenAI</strong>
+      <p style="margin: 6px 0 0 0; color: #64748b;">GPT-4 / GPT-3.5-turbo<br/>高质量，适合摘要/问答</p>
+    </div>
+    <div style="padding: 14px; background: #f0fdf4; border-radius: 8px;">
+      <strong style="color: #15803d;">🏠 本地 Ollama</strong>
+      <p style="margin: 6px 0 0 0; color: #64748b;">Llama 3 / Mistral<br/>免费隐私，适合离线使用</p>
+    </div>
+    <div style="padding: 14px; background: #faf5ff; border-radius: 8px;">
+      <strong style="color: #7e22ce;">🔌 可扩展</strong>
+      <p style="margin: 6px 0 0 0; color: #64748b;">Anthropic / 通义 / 文心<br/>统一接口，灵活切换</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>📊 核心数据模型</h3>
+  <div style="font-family: monospace; font-size: 12px; background: #f8fafc; padding: 16px; border-radius: 6px; line-height: 1.8;">
+    <span style="color: #6366f1;">Paper</span> {<br/>
+    &nbsp;&nbsp;id: string<br/>
+    &nbsp;&nbsp;title: string<br/>
+    &nbsp;&nbsp;authors: string[]<br/>
+    &nbsp;&nbsp;year: number<br/>
+    &nbsp;&nbsp;category: string<br/>
+    &nbsp;&nbsp;pdfPath: string<br/>
+    &nbsp;&nbsp;summary?: AISummary<br/>
+    &nbsp;&nbsp;difficulty: 'beginner' | 'intermediate' | 'advanced'<br/>
+    &nbsp;&nbsp;tags: string[]<br/>
+    &nbsp;&nbsp;references: string[]&nbsp;&nbsp;<span style="color: #94a3b8;">// 引用的论文 ID</span><br/>
+    }<br/><br/>
+    <span style="color: #22c55e;">AISummary</span> {<br/>
+    &nbsp;&nbsp;abstract: string<br/>
+    &nbsp;&nbsp;keyPoints: string[]<br/>
+    &nbsp;&nbsp;keyConcepts: { term: string; explanation: string }[]<br/>
+    &nbsp;&nbsp;prerequisites: string[]<br/>
+    &nbsp;&nbsp;relatedPapers: string[]<br/>
+    }
+  </div>
+</div>
+
+<div class="section">
+  <h3>🛡️ 错误处理 & 降级策略</h3>
+  <div class="pros-cons">
+    <div class="pros" style="font-size: 12px;">
+      <h4>✅ 正常模式</h4>
+      <ul>
+        <li>AI 摘要 + 问答完整可用</li>
+        <li>知识图谱实时渲染</li>
+        <li>阅读路径智能推荐</li>
+      </ul>
+    </div>
+    <div class="cons" style="font-size: 12px;">
+      <h4>⚠️ 降级模式</h4>
+      <ul>
+        <li>无 API Key 时：仅展示论文元数据 + PDF</li>
+        <li>AI 失败时：显示缓存结果或提示重试</li>
+        <li>向量库不可用：降级为关键词搜索</li>
+      </ul>
+    </div>
+  </div>
+</div>

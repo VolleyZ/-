@@ -1,0 +1,137 @@
+<h2>核心页面设计（续）</h2>
+<p class="subtitle">知识图谱 + 阅读路径，构建完整学习体验</p>
+
+<div class="section">
+  <h3>3️⃣ 知识图谱页 - 可视化探索</h3>
+  <div class="mockup">
+    <div class="mockup-header">知识图谱 | 分布式系统主题</div>
+    <div class="mockup-body">
+      <div style="display: flex; height: 500px;">
+        <div style="flex: 1; position: relative; background: #f8fafc;">
+          <svg width="100%" height="100%" viewBox="0 0 600 500">
+            <circle cx="300" cy="250" r="40" fill="#6366f1" opacity="0.9"/>
+            <text x="300" y="255" text-anchor="middle" fill="white" font-size="11" font-weight="bold">一致性</text>
+            
+            <circle cx="150" cy="150" r="28" fill="#8b5cf6" opacity="0.8"/>
+            <text x="150" y="155" text-anchor="middle" fill="white" font-size="10">Paxos</text>
+            <line x1="265" y1="225" x2="175" y2="170" stroke="#cbd5e1" stroke-width="2"/>
+            
+            <circle cx="450" cy="150" r="28" fill="#8b5cf6" opacity="0.8"/>
+            <text x="450" y="155" text-anchor="middle" fill="white" font-size="10">Raft</text>
+            <line x1="335" y1="225" x2="425" y2="170" stroke="#cbd5e1" stroke-width="2"/>
+            
+            <circle cx="100" cy="300" r="28" fill="#06b6d4" opacity="0.8"/>
+            <text x="100" y="305" text-anchor="middle" fill="white" font-size="10">CAP</text>
+            <line x1="265" y1="260" x2="125" y2="300" stroke="#cbd5e1" stroke-width="2"/>
+            
+            <circle cx="500" cy="300" r="28" fill="#06b6d4" opacity="0.8"/>
+            <text x="500" y="305" text-anchor="middle" fill="white" font-size="10">拜占庭</text>
+            <line x1="335" y1="260" x2="475" y2="300" stroke="#cbd5e1" stroke-width="2"/>
+            
+            <circle cx="200" cy="400" r="24" fill="#22c55e" opacity="0.8"/>
+            <text x="200" y="405" text-anchor="middle" fill="white" font-size="9">Chubby</text>
+            <line x1="160" y1="175" x2="205" y2="378" stroke="#e2e8f0" stroke-width="1.5"/>
+            
+            <circle cx="400" cy="400" r="24" fill="#22c55e" opacity="0.8"/>
+            <text x="400" y="405" text-anchor="middle" fill="white" font-size="9">ZooKeeper</text>
+            <line x1="440" y1="175" x2="395" y2="378" stroke="#e2e8f0" stroke-width="1.5"/>
+            
+            <circle cx="300" cy="420" r="24" fill="#f59e0b" opacity="0.8"/>
+            <text x="300" y="425" text-anchor="middle" fill="white" font-size="9">MapReduce</text>
+          </svg>
+        </div>
+        <div style="width: 260px; padding: 16px; border-left: 1px solid #e2e8f0; font-size: 12px;">
+          <strong>图谱筛选</strong>
+          <div style="margin-top: 12px;">
+            <p style="margin: 4px 0; color: #64748b;">主题分类</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;">
+              <span style="background: #e0e7ff; padding: 3px 8px; border-radius: 10px; font-size: 11px;">一致性协议</span>
+              <span style="background: #dcfce7; padding: 3px 8px; border-radius: 10px; font-size: 11px;">存储系统</span>
+            </div>
+          </div>
+          <div style="margin-top: 16px;">
+            <p style="margin: 4px 0; color: #64748b;">难度等级</p>
+            <div style="display: flex; gap: 8px; margin-top: 4px;">
+              <span style="font-size: 11px;">🌱 入门</span>
+              <span style="font-size: 11px;">📖 进阶</span>
+              <span style="font-size: 11px;">🔬 深入</span>
+            </div>
+          </div>
+          <div style="margin-top: 16px; padding: 12px; background: #f8fafc; border-radius: 6px;">
+            <p style="margin: 0 0 6px 0; font-weight: 600;">💡 学习路径</p>
+            <p style="margin: 0; color: #64748b; font-size: 11px;">从 CAP 定理开始 → Paxos → Raft → Chubby/ZooKeeper</p>
+            <button class="mock-button" style="margin-top: 8px; font-size: 11px; width: 100%;">开始学习</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>4️⃣ 阅读路径页 - 系统化学习</h3>
+  <div class="mockup">
+    <div class="mockup-header">学习路径 | 分布式系统入门到精通</div>
+    <div class="mockup-body">
+      <div style="padding: 20px; display: flex; gap: 20px;">
+        <div style="flex: 1;">
+          <h3 style="margin: 0 0 12px 0; font-size: 15px;">📚 学习路径：分布式系统</h3>
+          <p style="color: #64748b; font-size: 12px; margin: 0 0 16px 0;">共 12 篇论文 · 预计 4 周 · 适合中级开发者</p>
+          
+          <div style="position: relative; padding-left: 24px;">
+            <div style="position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: #e2e8f0;"></div>
+            
+            <div style="position: relative; margin-bottom: 16px;">
+              <div style="position: absolute; left: -20px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #22c55e; border: 3px solid #fff; box-shadow: 0 0 0 2px #22c55e;"></div>
+              <div style="padding: 10px 12px; background: #f0fdf4; border-radius: 6px; font-size: 12px;">
+                <strong style="color: #15803d;">第一阶段：基础概念</strong>
+                <p style="margin: 4px 0 0 0; color: #64748b;">2 篇 · 入门</p>
+                <p style="margin: 6px 0 0 0; font-size: 11px;">✓ 分布式系统中的时间与顺序<br/>✓ CAP 定理与 PACELC</p>
+              </div>
+            </div>
+            
+            <div style="position: relative; margin-bottom: 16px;">
+              <div style="position: absolute; left: -20px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #eab308; border: 3px solid #fff; box-shadow: 0 0 0 2px #eab308;"></div>
+              <div style="padding: 10px 12px; background: #fefce8; border-radius: 6px; font-size: 12px;">
+                <strong style="color: #a16207;">第二阶段：一致性协议</strong>
+                <p style="margin: 4px 0 0 0; color: #64748b;">4 篇 · 进阶</p>
+                <p style="margin: 6px 0 0 0; font-size: 11px;">○ Paxos Made Simple<br/>○ In Search of an Understandable Consensus Algorithm (Raft)<br/>○ ...</p>
+              </div>
+            </div>
+            
+            <div style="position: relative;">
+              <div style="position: absolute; left: -20px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #e2e8f0; border: 3px solid #fff; box-shadow: 0 0 0 2px #e2e8f0;"></div>
+              <div style="padding: 10px 12px; background: #f8fafc; border-radius: 6px; font-size: 12px; color: #94a3b8;">
+                <strong>第三阶段：工业实践</strong>
+                <p style="margin: 4px 0 0 0;">6 篇 · 深入</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="width: 260px;">
+          <div style="padding: 16px; background: #f8fafc; border-radius: 8px; font-size: 12px;">
+            <strong>📊 学习进度</strong>
+            <div style="margin-top: 10px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <span>总体进度</span>
+                <span>2/12</span>
+              </div>
+              <div style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                <div style="width: 17%; height: 100%; background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+              </div>
+            </div>
+            <div style="margin-top: 16px;">
+              <p style="margin: 0 0 8px 0; font-weight: 600;">🏷️ 相关标签</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span style="background: #e0e7ff; padding: 3px 8px; border-radius: 10px; font-size: 11px;">一致性</span>
+                <span style="background: #dcfce7; padding: 3px 8px; border-radius: 10px; font-size: 11px;">容错</span>
+                <span style="background: #fef3c7; padding: 3px 8px; border-radius: 10px; font-size: 11px;">共识算法</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

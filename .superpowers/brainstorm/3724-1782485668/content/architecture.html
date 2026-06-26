@@ -1,0 +1,76 @@
+<h2>PaperLens — 产品架构总览</h2>
+<p class="subtitle">智能论文探索平台：AI 驱动的计算机科学知识导航</p>
+
+<div class="section">
+  <h3>🏗️ 系统架构</h3>
+  <div style="background: #f8fafc; border-radius: 8px; padding: 20px; font-size: 13px; line-height: 1.8;">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 12px; color: #475569;">PaperLens 技术架构</div>
+    
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="background: #e0e7ff; padding: 10px 16px; border-radius: 6px; text-align: center; font-weight: 600; color: #3730a3;">
+        🎨 前端层：Next.js + TypeScript + TailwindCSS
+      </div>
+      <div style="text-align: center; color: #94a3b8;">▲</div>
+      <div style="background: #dbeafe; padding: 10px 16px; border-radius: 6px; text-align: center; font-weight: 600; color: #1e40af;">
+        ⚙️ API 层：Next.js API Routes / tRPC
+      </div>
+      <div style="text-align: center; color: #94a3b8;">▲</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="flex: 1; background: #dcfce7; padding: 10px; border-radius: 6px; text-align: center; font-weight: 600; color: #166534;">
+          🤖 AI 服务层<br/>
+          <span style="font-size: 11px; font-weight: normal;">LangChain.js + 多模型适配</span>
+        </div>
+        <div style="flex: 1; background: #fef3c7; padding: 10px; border-radius: 6px; text-align: center; font-weight: 600; color: #92400e;">
+          📚 论文数据层<br/>
+          <span style="font-size: 11px; font-weight: normal;">本地 PDF + 元数据索引</span>
+        </div>
+        <div style="flex: 1; background: #fce7f3; padding: 10px; border-radius: 6px; text-align: center; font-weight: 600; color: #9d174d;">
+          🗄️ 数据存储<br/>
+          <span style="font-size: 11px; font-weight: normal;">SQLite + 向量数据库</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🎯 四大核心功能模块</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 13px;">
+    <div style="background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 12px; border-radius: 0 6px 6px 0;">
+      <strong style="color: #0369a1;">📝 智能摘要 & 解读</strong><br/>
+      <span style="color: #64748b;">自动提取核心观点、通俗解释、关键公式/算法解读</span>
+    </div>
+    <div style="background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px; border-radius: 0 6px 6px 0;">
+      <strong style="color: #15803d;">🛤️ 阅读路径推荐</strong><br/>
+      <span style="color: #64748b;">按主题/难度生成学习路径，前置论文推荐</span>
+    </div>
+    <div style="background: #fefce8; border-left: 4px solid #eab308; padding: 12px; border-radius: 0 6px 6px 0;">
+      <strong style="color: #a16207;">💬 AI 问答对话</strong><br/>
+      <span style="color: #64748b;">针对论文内容提问，上下文理解，延伸讨论</span>
+    </div>
+    <div style="background: #faf5ff; border-left: 4px solid #a855f7; padding: 12px; border-radius: 0 6px 6px 0;">
+      <strong style="color: #7e22ce;">🔗 知识关联图谱</strong><br/>
+      <span style="color: #64748b;">可视化论文关系、引用网络、主题聚类</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>📁 项目结构</h3>
+  <div style="font-family: monospace; font-size: 12px; background: #f8fafc; padding: 16px; border-radius: 6px; line-height: 1.7;">
+    paperlens/<br/>
+    ├── apps/web/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># Next.js 前端应用</span><br/>
+    │&nbsp;&nbsp; ├── app/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># App Router 页面</span><br/>
+    │&nbsp;&nbsp; ├── components/&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># UI 组件</span><br/>
+    │&nbsp;&nbsp; └── lib/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 前端工具函数</span><br/>
+    ├── packages/ai/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># AI 服务层 (LangChain)</span><br/>
+    │&nbsp;&nbsp; ├── models/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 多模型适配器</span><br/>
+    │&nbsp;&nbsp; ├── prompts/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># Prompt 模板</span><br/>
+    │&nbsp;&nbsp; └── chains/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 处理链</span><br/>
+    ├── packages/core/&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 核心业务逻辑</span><br/>
+    │&nbsp;&nbsp; ├── paper/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 论文解析 & 索引</span><br/>
+    │&nbsp;&nbsp; ├── graph/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 知识图谱构建</span><br/>
+    │&nbsp;&nbsp; └── path/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 阅读路径算法</span><br/>
+    └── data/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #64748b;"># 论文数据 & 数据库</span>
+  </div>
+</div>

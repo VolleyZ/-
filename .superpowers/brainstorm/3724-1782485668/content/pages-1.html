@@ -1,0 +1,75 @@
+<h2>核心页面设计</h2>
+<p class="subtitle">四个主要页面构成完整的阅读体验</p>
+
+<div class="section">
+  <h3>1️⃣ 首页 - 探索入口</h3>
+  <div class="mockup">
+    <div class="mockup-header">paperlens.dev</div>
+    <div class="mockup-body">
+      <div class="mock-nav">🔍 PaperLens &nbsp;&nbsp; 浏览 &nbsp; 图谱 &nbsp; 我的收藏</div>
+      <div style="padding: 20px;">
+        <div style="text-align: center; padding: 30px 0;">
+          <h2 style="margin: 0 0 8px 0;">探索计算机科学经典论文</h2>
+          <p style="color: #64748b; margin: 0 0 20px 0;">AI 驱动的智能论文助手，让经典论文不再难读</p>
+          <div style="display: flex; justify-content: center; gap: 10px;">
+            <input class="mock-input" placeholder="搜索论文、主题、作者..." style="width: 400px;">
+            <button class="mock-button">搜索</button>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px;">
+          <div class="placeholder" style="height: 100px;">分布式系统<br/>45 篇论文</div>
+          <div class="placeholder" style="height: 100px;">机器学习<br/>32 篇论文</div>
+          <div class="placeholder" style="height: 100px;">编程语言<br/>28 篇论文</div>
+          <div class="placeholder" style="height: 100px;">数据库<br/>24 篇论文</div>
+          <div class="placeholder" style="height: 100px;">算法<br/>19 篇论文</div>
+          <div class="placeholder" style="height: 100px;">安全<br/>15 篇论文</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2️⃣ 论文详情页 - 核心阅读体验</h3>
+  <div class="mockup">
+    <div class="mockup-header">论文详情 | MapReduce: Simplified Data Processing...</div>
+    <div class="mockup-body">
+      <div style="display: flex; height: 500px;">
+        <div style="flex: 1; padding: 16px; border-right: 1px solid #e2e8f0;">
+          <div class="placeholder" style="height: 100%;">📄 PDF 阅读器区域</div>
+        </div>
+        <div style="width: 340px; display: flex; flex-direction: column;">
+          <div style="padding: 12px; border-bottom: 1px solid #e2e8f0; font-size: 13px;">
+            <strong>AI 助手</strong>
+            <div style="display: flex; gap: 8px; margin-top: 8px;">
+              <button class="mock-button" style="font-size: 11px; padding: 4px 8px;">📝 摘要</button>
+              <button class="mock-button" style="font-size: 11px; padding: 4px 8px;">💬 问答</button>
+              <button class="mock-button" style="font-size: 11px; padding: 4px 8px;">🔗 相关</button>
+            </div>
+          </div>
+          <div style="flex: 1; padding: 12px; font-size: 12px; overflow-y: auto;">
+            <p><strong>📌 核心观点：</strong></p>
+            <ul style="margin: 8px 0; padding-left: 20px;">
+              <li>MapReduce 将并行计算抽象为 Map 和 Reduce 两个函数</li>
+              <li>自动处理容错、数据分片、负载均衡</li>
+              <li>适合大规模数据集的批处理任务</li>
+            </ul>
+            <p style="margin-top: 12px;"><strong>🧠 关键概念：</strong></p>
+            <div style="margin: 8px 0;">
+              <span style="background: #e0e7ff; padding: 2px 8px; border-radius: 10px; font-size: 11px;">Map 阶段</span>
+              <span style="background: #dcfce7; padding: 2px 8px; border-radius: 10px; font-size: 11px;">Reduce 阶段</span>
+              <span style="background: #fef3c7; padding: 2px 8px; border-radius: 10px; font-size: 11px;">容错机制</span>
+            </div>
+            <p style="margin-top: 12px;"><strong>📚 前置阅读：</strong></p>
+            <p style="color: #64748b; font-size: 11px; margin: 4px 0;">• 分布式系统基础</p>
+            <p style="margin-top: 12px;"><strong>➡️ 延伸阅读：</strong></p>
+            <p style="color: #64748b; font-size: 11px; margin: 4px 0;">• GFS、Bigtable、Spark</p>
+          </div>
+          <div style="padding: 12px; border-top: 1px solid #e2e8f0;">
+            <input class="mock-input" placeholder="问 AI 关于这篇论文的问题..." style="width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
