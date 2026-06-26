@@ -8,5 +8,6 @@ export declare class SQLiteDB {
     transaction<T>(fn: () => T): T;
 }
 export declare function getDB(dbPath?: string): SQLiteDB;
+export declare function getProjectRoot(): string;
 export declare function resetDB(): void;
 //# sourceMappingURL=sqlite.d.ts.map

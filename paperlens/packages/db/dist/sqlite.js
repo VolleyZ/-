@@ -2,6 +2,36 @@ import Database from 'better-sqlite3';
 import path from 'path';
 import fs from 'fs';
 import { initSchema } from './schema';
+function findProjectRoot() {
+    if (process.env.PAPERLENS_ROOT) {
+        return process.env.PAPERLENS_ROOT;
+    }
+    let dir = process.cwd();
+    while (dir !== path.dirname(dir)) {
+        if (fs.existsSync(path.join(dir, 'pnpm-workspace.yaml'))) {
+            return dir;
+        }
+        const pkgPath = path.join(dir, 'package.json');
+        if (fs.existsSync(pkgPath)) {
+            try {
+                const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
+                if (pkg.name === 'paperlens') {
+                    return dir;
+                }
+            }
+            catch { }
+        }
+        dir = path.dirname(dir);
+    }
+    return process.cwd();
+}
+let _projectRoot = null;
+function getProjectRootInternal() {
+    if (_projectRoot === null) {
+        _projectRoot = findProjectRoot();
+    }
+    return _projectRoot;
+}
 export class SQLiteDB {
     constructor(dbPath) {
         const dir = path.dirname(dbPath);
@@ -29,10 +59,14 @@ export class SQLiteDB {
 let dbInstance = null;
 export function getDB(dbPath) {
     if (!dbInstance) {
-        const resolvedPath = dbPath || path.join(process.cwd(), 'data', 'db', 'paperlens.db');
+        const root = getProjectRootInternal();
+        const resolvedPath = dbPath || path.join(root, 'data', 'db', 'paperlens.db');
         dbInstance = new SQLiteDB(resolvedPath);
     }
     return dbInstance;
+}
+export function getProjectRoot() {
+    return getProjectRootInternal();
 }
 export function resetDB() {
     if (dbInstance) {

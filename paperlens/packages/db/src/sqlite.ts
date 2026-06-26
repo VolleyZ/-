@@ -3,6 +3,40 @@ import path from 'path'
 import fs from 'fs'
 import { SCHEMA_SQL, initSchema } from './schema'
 
+function findProjectRoot(): string {
+  if (process.env.PAPERLENS_ROOT) {
+    return process.env.PAPERLENS_ROOT
+  }
+  
+  let dir = process.cwd()
+  while (dir !== path.dirname(dir)) {
+    if (fs.existsSync(path.join(dir, 'pnpm-workspace.yaml'))) {
+      return dir
+    }
+    const pkgPath = path.join(dir, 'package.json')
+    if (fs.existsSync(pkgPath)) {
+      try {
+        const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'))
+        if (pkg.name === 'paperlens') {
+          return dir
+        }
+      } catch {}
+    }
+    dir = path.dirname(dir)
+  }
+  
+  return process.cwd()
+}
+
+let _projectRoot: string | null = null
+
+function getProjectRootInternal(): string {
+  if (_projectRoot === null) {
+    _projectRoot = findProjectRoot()
+  }
+  return _projectRoot
+}
+
 export class SQLiteDB {
   private db: Database.Database
 
@@ -38,10 +72,15 @@ let dbInstance: SQLiteDB | null = null
 
 export function getDB(dbPath?: string): SQLiteDB {
   if (!dbInstance) {
-    const resolvedPath = dbPath || path.join(process.cwd(), 'data', 'db', 'paperlens.db')
+    const root = getProjectRootInternal()
+    const resolvedPath = dbPath || path.join(root, 'data', 'db', 'paperlens.db')
     dbInstance = new SQLiteDB(resolvedPath)
   }
   return dbInstance
+}
+
+export function getProjectRoot(): string {
+  return getProjectRootInternal()
 }
 
 export function resetDB(): void {
