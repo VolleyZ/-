@@ -1,0 +1,21 @@
+{
+  "name": "@paperlens/db",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "chroma-js": "^2.4.0",
+    "chromadb": "^3.4.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/chroma-js": "^3.1.2",
+    "typescript": "^5.4.0"
+  }
+}

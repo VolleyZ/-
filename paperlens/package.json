@@ -1,0 +1,19 @@
+{
+  "name": "paperlens",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "pnpm --filter @paperlens/web dev",
+    "build": "pnpm --filter @paperlens/web build",
+    "lint": "pnpm -r lint",
+    "db:init": "tsx scripts/init-db.ts",
+    "db:seed": "tsx scripts/seed-data.ts",
+    "index": "tsx scripts/index-papers.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0"
+  }
+}
