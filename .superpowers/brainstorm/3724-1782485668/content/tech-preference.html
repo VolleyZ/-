@@ -1,0 +1,55 @@
+<h2>使用场景 & 技术偏好</h2>
+<p class="subtitle">这个工具主要在什么环境下使用？</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Web 应用（浏览器端）</h3>
+      <p>网页端访问，有美观的 UI，可以在线阅读论文、做笔记、与 AI 对话</p>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>命令行工具（CLI）</h3>
+      <p>终端中使用，适合开发者快速查询、生成摘要、推荐论文，轻量高效</p>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>两者都要</h3>
+      <p>先做 CLI 核心功能，再做 Web UI；或者并行开发，共用后端</p>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 32px;">
+  <h3 style="margin-bottom: 12px;">AI 模型偏好</h3>
+  <div class="options" data-multiselect>
+    <div class="option" data-choice="openai" onclick="toggleSelect(this)">
+      <div class="letter">●</div>
+      <div class="content">
+        <h3>OpenAI API</h3>
+        <p>GPT-4 等，效果好但需要 API Key</p>
+      </div>
+    </div>
+    <div class="option" data-choice="local" onclick="toggleSelect(this)">
+      <div class="letter">●</div>
+      <div class="content">
+        <h3>本地开源模型</h3>
+        <p>Ollama / Llama 等，免费隐私好但需要算力</p>
+      </div>
+    </div>
+    <div class="option" data-choice="both" onclick="toggleSelect(this)">
+      <div class="letter">●</div>
+      <div class="content">
+        <h3>都支持，可配置</h3>
+        <p>提供多种后端选项，用户自行选择</p>
+      </div>
+    </div>
+  </div>
+</div>
